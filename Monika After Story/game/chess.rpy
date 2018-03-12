@@ -964,7 +964,7 @@ init:
 
 label game_chess:
     hide screen keylistener
-    m 1b "You want to play chess? Alright~"
+    m 1b "Wow you want to play chess? Okay then but just be ready~"
 #   m 2a "Double click your king if you decide to surrender."
     m 1a "Get ready!"
     call demo_minigame_chess from _call_demo_minigame_chess
@@ -1080,21 +1080,21 @@ label mas_chess_game_start:
 
     elif game_result == "1/2-1/2":
         # draw
-        m 3h "A draw? How boring..."
+        m 3h "A draw? Really? Come on, I was expecting something better!"
         $ persistent._mas_chess_stats["draws"] += 1
 
     elif is_monika_winner:
         $ persistent._mas_chess_stats["losses"] += 1
         if is_surrender and num_turns <= 4:
-            m 1e "Come on, don't give up so easily."
+            m 1e "Don't give up so easily... It takes the fun out of beating you!"
         else:
-            m 1b "I win!"
+            m 1b "Haha! I win! I always knew I was good at chess!"
 
         if persistent.chess_strength>0:
-            m 1j "I'll go a little easier on you next time."
+            m 1j "Oh fine, I'll go easy on you next time!"
             $persistent.chess_strength += -1
         else:
-            m 1l "I really was going easy on you!"
+            m 1l "I am going easy on you!"
 
     else:
         $ persistent._mas_chess_stats["wins"] += 1
@@ -1103,18 +1103,18 @@ label mas_chess_game_start:
             $persistent.ever_won['chess'] = True
             $grant_xp(xp.WIN_GAME)
 
-        m 2a "You won! Congratulations."
+        m 2a "You won! Nice, and I thought you were going to give up at the last minute!"
         if persistent.chess_strength<20:
-            m 2 "I'll get you next time for sure!"
+            m 2 "Oh you just wait... I'll get you soon enough."
             $persistent.chess_strength += 1
         else:
-            m 2b "You really are an amazing player!"
-            m 3l "Are you sure you're not cheating?"
+            m 2b "Yeah.. Okay... Fine... You're a pretty good player."
+            m 3l "Yeah okay, are you sure your not cheating?"
 
     # we only save a game if they put in some effort
     if num_turns > 4:
         menu:
-            m "Would you like to save this game?"
+            m "You gonna save this game?"
             "Yes":
                 label mas_chess_savegame:
                     python:
@@ -1152,7 +1152,7 @@ label mas_chess_game_start:
 
                     # check if this file exists already
                     if is_file_exist:
-                        m 1e "We already have a game named '[save_name]'."
+                        m 1e "We already have one named '[save_name]', or are you gonna overwrite it?"
                         menu:
                             m "Should I overwrite it?"
                             "Yes":
@@ -1177,7 +1177,7 @@ label mas_chess_game_start:
                             m "You can open this file in PGN viewers."
 
                             if game_result == "*": # ongoing game
-                                m 1n "It's possible to edit this file and change the outcome of the game,{w} but I'm sure you wouldn't do that."
+                                m 1n "It's possible to edit the file and change the outcome of the game,{w} but I'm sure you wouldn't do that, unless of course you were gonna let me win!"
                                 m 1e "Right, [player]?"
                                 menu:
                                     "Of course not":
@@ -1191,7 +1191,7 @@ label mas_chess_game_start:
 
 label mas_chess_playagain:
     menu:
-        m "Do you want to play again?"
+        m "Rematch?"
 
         "Yes":
             jump demo_minigame_chess
@@ -1200,15 +1200,15 @@ label mas_chess_playagain:
 
 label mas_chess_end:
     if is_monika_winner:
-        m 2d "Despite its simple rules, chess is a really intricate game."
-        m 1a "It's okay if you find yourself struggling at times."
-        m 1j "Remember, the important thing is to be able to learn from your mistakes."
+        m 2d "Despite chess being a pretty simple ruled game, it's actually pretty intricate."
+        m 1a "It's okay if you're struggling at times."
+        m 1j "Remember, the important thing is to always learn from your mistakes or your just gonna keep failing, I feel like someone has said that."
     elif game_result == "*":
         # TODO: this really should be better
-        m 1a "Okay, [player], let's continue this game soon."
+        m 1a "Okay, [player], let's continue this sometime later."
     else:
-        m 2b "It's amazing how much more I have to learn even now."
-        m 2a "I really don't mind losing as long as I can learn something."
+        m 2b "Wow, I didn't realize there's so much I don't know yet about chess."
+        m 2a "I don't really care if I lose, if I learn something I guess it's all worth it in the end."
         m 1j "After all, the company is good."
 
     return
