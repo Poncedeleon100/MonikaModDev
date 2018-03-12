@@ -16,21 +16,21 @@ init -100 python:
 init python:
     menu_trans_time = 1
     #The default splash message, originally shown in Act 1 and Act 4
-    splash_message_default = "This game is an unofficial fan work, unaffiliated with Team Salvato."
+    splash_message_default = "This game is a shitpost because I have nothing to do."
     splash_messages = [
-    "Please support Doki Doki Literature Club & Team Salvato."
-    "You are my sunshine,\nMy only sunshine",
-    "I missed you.",
-    "Play with me",
-    "It's just a game, mostly.",
-    "This game is not suitable for children\nor those who are easily disturbed?",
-    "sdfasdklfgsdfgsgoinrfoenlvbd",
-    "null",
-    "I have granted kids to hell",
-    "PM died for this.",
-    "It was only partially your fault.",
-    "This game is not suitable for children\nor those who are easily dismembered.",
-    "Don't forget to backup Monika's character file."
+    "Please support the official release and shit... Salvato is god."
+    "You make me consider suicide,\nMy only suicide",
+    "Can you leave?",
+    "Never talk to me again.",
+    "This shit sucks ass, all of it.",
+    "This game will make you fuck your dog if you're not careful...",
+    "aaaaaaaAAAAAAAAAAAAAA",
+    "Your mom gay lol",
+    "Your dad lesbian lol",
+    "Fuck.",
+    "lol",
+    "Okay, it seems you forgot the previous warning but you WILL fuck your dog.",
+    "Please don't read this, please."
     ]
 
 image splash_warning = ParameterizedText(style="splash_text", xalign=0.5, yalign=0.5)
@@ -175,12 +175,12 @@ label splashscreen:
         scene tos
         with Dissolve(1.0)
         pause 1.0
-        "[config.name] is a Doki Doki Literature Club fan mod that is not affiliated with Team Salvato."
-        "It is designed to be played only after the official game has been completed, and contains spoilers for the official game."
-        "Game files for Doki Doki Literature Club are required to play this mod and can be downloaded for free at: http://ddlc.moe"
+        "[config.name] is a game that is really not affiliated with Dan Salvato but if it was, damn."
+        "Please play the game first also sayori dies."
+        "Yo you playin this so ye"
         menu:
-            "By playing [config.name] you agree that you have completed Doki Doki Literature Club and accept any spoilers contained within."
-            "I agree.":
+            "By playing [config.name] you agree to the consexual confinements and other sexual, asexual, or bisexual acts that may occur within."
+            "No consent.":
                 pass
         scene tos2
         with Dissolve(1.5)
