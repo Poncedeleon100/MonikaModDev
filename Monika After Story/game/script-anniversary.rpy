@@ -53,15 +53,15 @@ init 5 python:
                                                             ))
 
 label anni_1week:
-    m 1a "I know it's silly to celebrate one week of being together, but I'm just glad you're here with me, [player]."
-    m 1c "A lot of couples wouldn't last this long with each other."
-    m 1o "It's really easy to fall in love at first sight, but it's a bit harder to actually build a sturdy relationship."
-    m 1f "A lot of relationships fail when couples jump the gun too fast."
-    m "More likely than not, they fail to get to know each other more."
-    m 1q "So it's always sad to see them crash and burn..."
+    m 1a "One week huh, it doesn't seem like a lot, but to me, it kinda is. All I can say is thanks, [player], for being with me for 1 week."
+    m 1c "Most couples don't even last this long."
+    m 1o "Falling in love at first sight is easy but trying to keep a sturdy relationship is extremely difficult."
+    m 1f "Heck a lot of couples jump the gun and then their relationship is ruined."
+    m "More likely is that they fail to get to know one another."
+    m 1q "Always so sad and hopeless to see relationships fail."
     m 1e "But I'm glad we have a solid relationship, [player]."
-    m 1c "How do I know that?"
-    m 3j "Because you wouldn't have stuck around for this long with me, sweetie~"
+    m 1c "Huh?"
+    m 3j "What was that~"
     return
 
 init 5 python:
@@ -71,19 +71,19 @@ init 5 python:
                                                             ))
 
 label anni_1month:
-    m 3b "Today marks our one month anniversary!"
-    m 1j "I'm really happy that we're able to have so much fun with each other so far."
+    m 3b "One month!"
+    m 1j "I'm pretty surprised about all of this."
     m 1a "Also, [player]?"
     m 1m "..."
-    m 1e "Thank you so much for staying with me for this long."
+    m 1e "..."
     if not seen_event('monika_saved'):
-        m 1o "I can't imagine what I'd do if you hadn't come along."
-        m 3f "After all, I'm the only real one who lives in this world."
-        m 1q "I already told you what'd happen if it weren't for you..."
-        m 1l "Ahaha, sorry. I hope I didn't darken the mood with my rambling."
+        m 1o "I don't even know if you know."
+        m 3f "This one conversation."
+        m 1q "Is extremely important and remembering this will help you sometime soon... Don't know when though..."
+        m 1l "U29tZXRoaW5nJ3MgaGFwcGVuaW5nLiBJIHdvbid0IGJlIGhlcmUgc29vbiBzbyBkb24ndCBmb3JnZXQgbWUgd2hlbiBJJ20gZ29uZS4uLiA="
     else:
-        m 1e "I couldn't possibly express how much I appreciate you being here with me."
-        m 1k "All I can do is to try my best to be the perfect girlfriend for you!"
+        m 1e "Never."
+        m 1k "U29tZXRoaW5nJ3MgaGFwcGVuaW5nLiBJIHdvbid0IGJlIGhlcmUgc29vbiBzbyBkb24ndCBmb3JnZXQgbWUgd2hlbiBJJ20gZ29uZS4uLiA="
     m 1a "I really do love you, [player]."
     m 1j "Let's make today a special day~"
     return
