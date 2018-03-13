@@ -235,7 +235,7 @@
 
 label game_pong:
     hide screen keylistener
-    m 1a "You wanna play a game of Pong? Okay!"
+    m 1a "PONG IS THE WORST GAME EVER MADE LOL"
 #    m 1b "I'll beat you for sure this time!" # this line is useless
     call demo_minigame_pong from _call_demo_minigame_pong
     return
@@ -285,11 +285,11 @@ label demo_minigame_pong:
     call expression inst_dialogue from _mas_pong_inst_dialogue
 
     menu:
-        m "Do you want to play again?"
+        m "LOL YOU WANT TO PLAY THIS GAME AGAIN?"
 
-        "Yes.":
+        "Hella Yes":
             jump demo_minigame_pong
-        "No.":
+        "Fucking Fuck No":
 
             if winner == "monika":
                 if renpy.seen_label(store.mas_pong.DLG_WINNER_END):
@@ -332,7 +332,7 @@ init -1 python in mas_pong:
 
 # dialogue shown right when monika wins
 label mas_pong_dlg_winner:
-    m 1j "I win~!"
+    m 1j "I WIN GET REKT BITCH"
     return
 
 # end dialogue shown when monika is the pong winner
