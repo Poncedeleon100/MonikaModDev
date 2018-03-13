@@ -30,7 +30,7 @@ There's no video tutorial, sorry.
 
 * Running DDLC will copy all files you put into the `/game` folder of DDLC into .rpyc format, which is what we want, so close DDLC and delete all repeated .rpy files that have been copied to .rpyc.
 
-* Running DDLC afterwards will load the XxX_Monika_the_Memelord_XxX.
+* Running DDLC afterwards will load the XxX_Monika_the_Memelord_XxX mod.
 
 If you need help just ask please.
 
