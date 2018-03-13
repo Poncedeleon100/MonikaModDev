@@ -1,5 +1,5 @@
 init 100 python:
-    layout.QUIT = "Leaving without saying goodbye, [player]?"
+    layout.QUIT = "Quitting on me now are you huh, [player]?"
 ## Initialization
 ################################################################################
 
