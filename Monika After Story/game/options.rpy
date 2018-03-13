@@ -12,7 +12,7 @@
 ##
 ## The _() surrounding the string marks it as eligible for translation.
 
-define config.name = "Monika After Story"
+define config.name = "Monika the Memelord"
 
 
 ## Determines if the title given above is shown on the main menu screen. Set
@@ -23,19 +23,19 @@ define gui.show_name = False
 
 ## The version of the game.
 
-define config.version = "0.7.2"
+define config.version = "6.6.6"
 
 ## Text that is placed on the game's about screen. To insert a blank line
 ## between paragraphs, write \n\n.
 
-define gui.about = _("")
+define gui.about = _("Monika talks about memes for 5 minutes")
 
 
 ## A short name for the game used for executables and directories in the built
 ## distribution. This must be ASCII-only, and must not contain spaces, colons,
 ## or semicolons.
 
-define build.name = "Monika_After_Story"
+define build.name = "Monika_the_Memelord"
 
 ## Sounds and music ############################################################
 
