@@ -337,11 +337,11 @@ label mas_pong_dlg_winner:
 
 # end dialogue shown when monika is the pong winner
 label mas_pong_dlg_winner_end:
-    m 4e "I can't really get excited for a game this simple..."
-    m 1a "At least we can still hang out with each other."
+    m 4e "Why am I so excited for a game this simple... Makes you wonder..."
+    m 1a "I hope this doesn't ruin you, that would suck."
     m 1k "Ahaha!"
-    m 1b "Thanks for letting me win, [player]."
-    m 1a "Only elementary schoolers seriously lose at Pong, right?"
+    m 1b "Haha! Thanks for letting me win, [player]!"
+    m 1a "It takes skill to be bad at a game like pong..."
     m 1j "Ehehe~"   
     return
 
@@ -352,18 +352,18 @@ label mas_pong_dlg_winner_fast:
 
 # dialogtue shown right when monika loses
 label mas_pong_dlg_loser:
-    m 1a "You won! Congratulations."
+    m 1a "You won! Congrats [player]!."
     return
 
 # end dialogue shown when monka is the pong loser
 label mas_pong_dlg_loser_end:
-    m 1d "Wow, I was actually trying that time."
-    m 1a "You must have really practiced at Pong to get so good."
-    m "Is that something for you to be proud of?"
-    m 1j "I guess you wanted to impress me, [player]~"   
+    m 1d "Wow, and I was actually trying that time."
+    m 1a "Practice makes perfect I guess, and you're practicing alot!"
+    m "Is this something you should really be proud of though?"
+    m 1j "Trying to impress me huh, [player]? Pong is something that you cannot impress people with~"   
     return
 
 # quick dialogue shown when monika is the pong loser
 label mas_pong_dlg_loser_fast:
-    m 1e "I'll beat you next time, [player]."
+    m 1e "Just you see, [player], you're gonna get it next time..."
     return
