@@ -964,9 +964,9 @@ init:
 
 label game_chess:
     hide screen keylistener
-    m 1b "Wow you want to play chess? Okay then but just be ready~"
-#   m 2a "Double click your king if you decide to surrender."
-    m 1a "Get ready!"
+    m 1b "Chess is a fucking nerds game~"
+#   m 2a "Double click your king if your a pussy."
+    m 1a "Get fucking ready."
     call demo_minigame_chess from _call_demo_minigame_chess
     return
 
@@ -1015,7 +1015,7 @@ label demo_minigame_chess:
             
             m 1a "We still have [game_s_dialog] in progress."
             show monika at t21
-            $ renpy.say(m, "Pick a game you'd like to play.", interact=False)
+            $ renpy.say(m, "Pick a game you want to play faggot.", interact=False)
 
             call screen mas_gen_scrollable_menu(pgn_games, mas_chess.CHESS_MENU_AREA, mas_chess.CHESS_MENU_XALIGN, mas_chess.CHESS_MENU_FINAL_ITEM)
 
@@ -1024,7 +1024,7 @@ label demo_minigame_chess:
 
             # check if user backs out
             if loaded_game == mas_chess.CHESS_MENU_FINAL_VALUE:
-                m "Alright, maybe later?"
+                m "What you a fuckin pussy?"
                 return
             
             # check if user picked a game
@@ -1040,20 +1040,20 @@ label demo_minigame_chess:
     # otherwise, new games only
     $ loaded_game = None
     menu:
-        m "What color would suit you?"
+        m "What color would suit you faggot?"
 
-        "White":
+        "White lol":
             $ player_color = ChessDisplayable.COLOR_WHITE
-        "Black":
+        "Black because":
             $ player_color = ChessDisplayable.COLOR_BLACK
-        "Let's draw lots!":
+        "I don't fucking care":
             $ choice = random.randint(0, 1) == 0
             if choice:
                 $ player_color = ChessDisplayable.COLOR_WHITE
-                m 2a "Oh look, I drew black! Let's begin!"
+                m 2a "Fuck, I got black, shit."
             else:
                 $ player_color = ChessDisplayable.COLOR_BLACK
-                m 2a "Oh look, I drew white! Let's begin!"
+                m 2a "Haha, you got black lol."
 
 label mas_chess_game_start:
     window hide None
@@ -1080,21 +1080,21 @@ label mas_chess_game_start:
 
     elif game_result == "1/2-1/2":
         # draw
-        m 3h "A draw? Really? Come on, I was expecting something better!"
+        m 3h "Fuck it's a draw. I hate draws goddamnit."
         $ persistent._mas_chess_stats["draws"] += 1
 
     elif is_monika_winner:
         $ persistent._mas_chess_stats["losses"] += 1
         if is_surrender and num_turns <= 4:
-            m 1e "Don't give up so easily... It takes the fun out of beating you!"
+            m 1e "What the fuck man? Try next time please."
         else:
-            m 1b "Haha! I win! I always knew I was good at chess!"
+            m 1b "Fuck yes! I beat your ass!"
 
         if persistent.chess_strength>0:
-            m 1j "Oh fine, I'll go easy on you next time!"
+            m 1j "Your bad at chess, git gud m8."
             $persistent.chess_strength += -1
         else:
-            m 1l "I am going easy on you!"
+            m 1l "Okay I'm calling it, YOU FUCKING SUCK AT CHESS."
 
     else:
         $ persistent._mas_chess_stats["wins"] += 1
@@ -1103,19 +1103,19 @@ label mas_chess_game_start:
             $persistent.ever_won['chess'] = True
             $grant_xp(xp.WIN_GAME)
 
-        m 2a "You won! Nice, and I thought you were going to give up at the last minute!"
+        m 2a "Man fuck you."
         if persistent.chess_strength<20:
-            m 2 "Oh you just wait... I'll get you soon enough."
+            m 2 "I'll beat your ass so hard next time it'll leave a mark."
             $persistent.chess_strength += 1
         else:
-            m 2b "Yeah.. Okay... Fine... You're a pretty good player."
-            m 3l "Yeah okay, are you sure your not cheating?"
+            m 2b "Jesus your good at chess."
+            m 3l "Are you fucking cheating motherfucker chichkenshit?"
 
     # we only save a game if they put in some effort
     if num_turns > 4:
         menu:
-            m "You gonna save this game?"
-            "Yes":
+            m "Lol your gonna save this ass game?"
+            "Fuck Yes":
                 label mas_chess_savegame:
                     python:
                         if loaded_game: # previous game exists
@@ -1129,7 +1129,7 @@ label mas_chess_game_start:
                             save_name = ""
                             while len(save_name) == 0:
                                 save_name = renpy.input(
-                                    "Enter a name for this game:",
+                                    "Enter a gay ass name:",
                                     allow=mas_chess.CHESS_SAVE_NAME,
                                     length=15
                                 )
@@ -1152,12 +1152,12 @@ label mas_chess_game_start:
 
                     # check if this file exists already
                     if is_file_exist:
-                        m 1e "We already have one named '[save_name]', or are you gonna overwrite it?"
+                        m 1e "Dude you idiot, we already have one named '[save_name]', bitch are you gonna overwrite?"
                         menu:
-                            m "Should I overwrite it?"
-                            "Yes":
+                            m "Bitch your gonna overwrite it? Now?"
+                            "Hell Yes":
                                 pass
-                            "No":
+                            "Fuck No":
                                 jump mas_chess_savegame
                         
                     python:
@@ -1173,43 +1173,44 @@ label mas_chess_game_start:
                     if not renpy.seen_label("mas_chess_pgn_explain"):
 
                         label mas_chess_pgn_explain:
-                            m 1a "It's in a format called Portable Game Notation."
+                            m 1a "If you don't know it's in a format called Portable Game Notation."
                             m "You can open this file in PGN viewers."
+                            m "OH MAN THAT WAS FUCKING NERDY!"
 
                             if game_result == "*": # ongoing game
-                                m 1n "It's possible to edit the file and change the outcome of the game,{w} but I'm sure you wouldn't do that, unless of course you were gonna let me win!"
-                                m 1e "Right, [player]?"
+                                m 1n "Bitch you can edit this shit and if you fucking make it so you would win I would beat your ass."
+                                m 1e "Right, motherfucker who's name is [player]?"
                                 menu:
-                                    "Of course not":
-                                        m 1j "Yay~"
+                                    "Fuck no":
+                                        m 1j "Ok because I was about to beat your ass~"
 
                     if game_result == "*":
                         jump mas_chess_end
-            "No":
+            "Fuck No":
                 # TODO: should there be dialogue here?
                 pass
 
 label mas_chess_playagain:
     menu:
-        m "Rematch?"
+        m "You gonna play again bitch?"
 
-        "Yes":
+        "Hell Yes":
             jump demo_minigame_chess
-        "No":
+        "Fuck No":
             pass
 
 label mas_chess_end:
     if is_monika_winner:
-        m 2d "Despite chess being a pretty simple ruled game, it's actually pretty intricate."
-        m 1a "It's okay if you're struggling at times."
-        m 1j "Remember, the important thing is to always learn from your mistakes or your just gonna keep failing, I feel like someone has said that."
+        m 2d "OK SO APPARENTLY CHESS IS A NERDY GAME."
+        m 1a "IF YOU STRUGGLE GOOD MAN."
+        m 1j "I DON'T LEARN ANYTHING HELPFUL FROM THIS MY BRAIN CELLS ARE DYING HELP."
     elif game_result == "*":
         # TODO: this really should be better
-        m 1a "Okay, [player], let's continue this sometime later."
+        m 1a "Bitch, [player], let's continue this sometime later, when I can BEAT YOUR ASS."
     else:
-        m 2b "Wow, I didn't realize there's so much I don't know yet about chess."
-        m 2a "I don't really care if I lose, if I learn something I guess it's all worth it in the end."
-        m 1j "After all, the company is good."
+        m 2b "OH FUCK YOU TOO."
+        m 2a "FUCK YOU SO MUCH."
+        m 1j "CHESS SUCKS LETS NOT PLAY THIS ANYMORE."
 
     return
 
@@ -1239,7 +1240,7 @@ screen mas_chess_confirm():
             yalign .5
             spacing 30
 
-            label _("Are you sure you want to give up?"):
+            label _("BITCH YOUR GIVING UP??"):
                 style "confirm_prompt"
                 xalign 0.5
 
@@ -1247,5 +1248,5 @@ screen mas_chess_confirm():
                 xalign 0.5
                 spacing 100
 
-                textbutton _("Yes") action Return(True)
-                textbutton _("No") action Return(False)
+                textbutton _("Hell Yes") action Return(True)
+                textbutton _("Fuck No") action Return(False)
