@@ -24,11 +24,13 @@ For more help with installation, please see our [Frequently Asked Questions](htt
 
 There's no video tutorial, sorry.
 
-* Click the green button that says clone or download and make sure to download it as a zip file
+* Go to the release page and download the latest release as a zip file
 
 * Simply copy the files inside of the `/game` folder of this mod and put it into the `/game` folder of your DDLC installation.
 
-* Running DDLC will now load the XxX_Monika_the_Memelord_XxX mod.
+* Running DDLC will copy all files you put into the `/game` folder of DDLC into .rpyc format, which is what we want, so close DDLC and delete all repeated .rpy files that have been copied to .rpyc.
+
+* Running DDLC afterwards will load the XxX_Monika_the_Memelord_XxX.
 
 If you need help just ask please.
 
